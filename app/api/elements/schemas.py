@@ -10,5 +10,12 @@ class ElementsToProcessBase(BaseModel):
 class ElementsToProcessCreate(ElementsToProcessBase):
     pass
 
+class ElementsToProcessUpdate(BaseModel):
+    id_bulk: Optional[int] = None
+    retries: Optional[int] = None
+    status: Optional[int] = None
+    name: Optional[str] = None
+    id: int
+
 class ElementsToProcessOut(ElementsToProcessBase):
     id: int
