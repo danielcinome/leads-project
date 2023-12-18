@@ -1,5 +1,5 @@
 from app.db.postgres.connector import PostgresqlManager
-from sqlalchemy import Column, DateTime, Index, Integer, String
+from sqlalchemy import Column, DateTime, Index, Integer, String, Boolean
 from datetime import datetime
 
 
@@ -8,6 +8,16 @@ class ChangesTracking(PostgresqlManager.Base):
 
     created_on = Column(DateTime(), default=datetime.utcnow)
     updated_on = Column(DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+class User(ChangesTracking):
+    __tablename__ = 'users'
+
+    id  = Column(Integer, primary_key=True, index=True, unique=True, nullable=False)
+    username = Column(String, nullable=False)
+    hashed_password = Column(String, nullable=False)
+    email = Column(String, nullable=False)
+    is_active = Column(Boolean, default=True)
 
 
 class ElementsToProcess(ChangesTracking):
