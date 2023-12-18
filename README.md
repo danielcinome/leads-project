@@ -146,6 +146,7 @@ The current structure of the project is organized as follows:
 
 The project architecture is based on a backend application developed in Python using the FastAPI framework. The authentication is done through JSON Web Tokens (JWT) using OAuth2PasswordBearer. The design is oriented to provide a RESTful API that allows the management of process elements  and users.
 
+![F1-1](https://i.ibb.co/MZTDYKd/Captura-de-pantalla-2023-12-17-a-la-s-10-04-15-p-m.png)
 
 ## Authors and Contact
 - Daniel Chinome
